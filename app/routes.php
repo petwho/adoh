@@ -11,13 +11,10 @@
 |
 */
 
-Route::get('/', 'HomeController@intro');
-Route::get('/home', 'HomeController@home');
-Route::get('/kien-thuc/', 'HomeController@kien_thuc');
-Route::get('/gioi-thieu', 'HomeController@gioi_thieu');
-Route::get('/vat-lieu', 'HomeController@vat_lieu');
-Route::get('/shop-noi-that', 'HomeController@shop_noi_that');
-Route::get('/phong-thuy', 'HomeController@phong_thuy');
+Route::get('/', 'HomeController@home');
+Route::get('/gallery', 'HomeController@gallery');
+Route::get('/album', 'HomeController@album');
+Route::get('/post', 'HomeController@post');
 
 Route::get('/dashboard', array(
   'before' => 'auth',

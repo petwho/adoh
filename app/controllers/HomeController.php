@@ -15,14 +15,24 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function intro()
-	{
-		return View::make('intro');
-	}
-
 	public function home()
 	{
-		return View::make('hello', array('projects' => Project::all()));
+		return View::make('home');
+	}
+
+	public function gallery()
+	{
+		return View::make('gallery');
+	}
+
+	public function album()
+	{
+		return View::make('album');
+	}
+
+	public function post()
+	{
+		return View::make('post');
 	}
 
 	public function kien_thuc()
