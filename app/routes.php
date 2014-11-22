@@ -12,9 +12,11 @@
 */
 
 Route::get('/', 'HomeController@home');
-Route::get('/gallery', 'HomeController@gallery');
-Route::get('/album', 'HomeController@album');
-Route::get('/post', 'HomeController@post');
+Route::get('/graphic', 'HomeController@graphic');
+Route::get('/interior', 'HomeController@interior');
+Route::get('/pallet', 'HomeController@pallet');
+Route::get('/articles/{id}', 'HomeController@article');
+Route::get('/posts/{id}', 'HomeController@posts');
 
 Route::get('/dashboard', array(
   'before' => 'auth',
@@ -46,7 +48,7 @@ Route::put('menus/{id}/restore', 'MenusController@restore');
 Route::delete('menus/{id}/trash', 'MenusController@trash');
 
 /* Post */
-Route::resource('posts', 'PostsController');
+// Route::resource('posts', 'PostsController');
 /* Uploads */
 Route::resource('uploads', 'UploadsController');
 
@@ -55,5 +57,3 @@ App::missing(function($exception)
   return Response::view('errors.missing', array(), 404);
 });
 
-Route::get('/kien-thuc/{id}', 'HomeController@kien_thuc_post');
-Route::get('/phong-thuy/{id}', 'HomeController@phong_thuy_post');

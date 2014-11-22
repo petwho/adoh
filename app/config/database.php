@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'xuyena_cons',
+			'database'  => 'adoh',
 			'username'  => 'root',
 			'password'  => 'abcdabcd',
 			'charset'   => 'utf8',

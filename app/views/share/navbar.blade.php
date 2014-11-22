@@ -7,7 +7,7 @@
                 <li><a href="gallery.php">Graphic design</a></li>
                 <li><a href="album.php">Interior design</a></li>
                 <li><a href="post.php">Pallet wood design</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a id="contact">Contact</a></li>
             </ul>
         </div>
     </div>

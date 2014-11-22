@@ -6,19 +6,19 @@
   <div class="row image-wrapper" id="banners">
     <div class="col-xs-4">
       <div class="thumbnail hidden-overflow">
-        <a href="#"><img class="img-responsive img-scalable" src="images/header-image-1.png"/></a>
+        <a href="/graphic"><img class="img-responsive img-scalable" src="images/header-image-1.png"/></a>
       </div>
       <div class="caption-text caption-text-1">GRAPHIC DESIGN</div>
     </div>
     <div class="col-xs-4">
       <div class="thumbnail hidden-overflow">
-        <a href="#"><img class="img-responsive img-scalable" src="images/header-image-2.png"/></a>
+        <a href="/interior"><img class="img-responsive img-scalable" src="images/header-image-2.png"/></a>
       </div>
       <div class="caption-text caption-text-2">INTERIOR DESIGN</div>
     </div>
     <div class="col-xs-4">
       <div class="thumbnail hidden-overflow">
-        <a href="#"><img class="img-responsive img-scalable" src="images/header-image-3.png"/></a>
+        <a href="/pallet"><img class="img-responsive img-scalable" src="images/header-image-3.png"/></a>
       </div>
       <div class="caption-text caption-text-3">PALLET WOOD DESIGN</div>
     </div>
@@ -67,6 +67,7 @@
   </div>
 
   <div class="row" id="info">
+    <a id="contact"></a>
     <div class="xol-xs-12 col-md-8 map">
       <div class="embed-responsive embed-responsive-16by9">
       <iframe class="embed-responsive-item"

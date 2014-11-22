@@ -1,4 +1,3 @@
-<div class="row-gap-medium"></div>
 <div class="row">
   <div class="col-xs-3 text-right">
     <div class="h3">About Us</div>

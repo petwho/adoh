@@ -17,59 +17,76 @@ class HomeController extends BaseController {
 
 	public function home()
 	{
-		return View::make('home');
+		$posts = Post::all();
+		$articles = Article::all();
+
+		return View::make('home', array(
+			'posts' => $posts,
+			'articles' => $articles
+		));
 	}
 
-	public function gallery()
+	public function graphic()
 	{
-		return View::make('gallery');
+		$posts = Post::where('gallery_id', '=', 1)->get();
+		$articles = Article::where('gallery_id', '=', 1)->get();
+		$gallery = Gallery::find(1);
+
+		return View::make('gallery', array(
+			'posts' => $posts,
+			'articles' => $articles,
+			'gallery' => $gallery
+		));
 	}
 
-	public function album()
+	public function interior()
 	{
-		return View::make('album');
+		$posts = Post::where('gallery_id', '=', 2)->get();
+		$articles = Article::where('gallery_id', '=', 2)->get();
+		$gallery = Gallery::find(2);
+
+		return View::make('gallery', array(
+			'posts' => $posts,
+			'articles' => $articles,
+			'gallery' => $gallery
+		));
 	}
 
-	public function post()
+	public function pallet()
 	{
-		return View::make('post');
+		$posts = Post::where('gallery_id', '=', 3)->get();
+		$articles = Article::where('gallery_id', '=', 3)->get();
+		$gallery = Gallery::find(3);
+
+		return View::make('gallery', array(
+			'posts' => $posts,
+			'articles' => $articles,
+			'gallery' => $gallery
+		));
 	}
 
-	public function kien_thuc()
+	public function article($id)
 	{
-		// $category = Category::find($cat_id);
-		return View::make('kien_thuc', array('categories' => Category::all()));
+		$posts = Post::all();
+		$articles = Article::all();
+		$article = Article::find($id);
+
+		return View::make('article', array(
+			'posts' => $posts,
+			'articles' => $articles, 'article' => $article
+		));
 	}
 
-	public function kien_thuc_post($id)
+	public function posts($id)
 	{
+		$articles = Article::all();
 		$post = Post::find($id);
-		return View::make('kien_thuc_post', array('post' => $post));
-	}
+		$posts = Post::where('gallery_id', '=', $post->gallery['id'])->get();
 
-	public function gioi_thieu()
-	{
-		return View::make('gioi_thieu', array('categories' => Category::all()));
-	}
-
-	public function vat_lieu()
-	{
-		return View::make('vat_lieu');
-	}
-
-	public function shop_noi_that()
-	{
-		return View::make('shop_noi_that');
-	}
-
-	public function phong_thuy()
-	{
-		return View::make('phong_thuy', array('categories' => Category::where('id', '>', 7)->get()));
-	}
-
-	public function phong_thuy_post($id)
-	{
-		$post = Post::find($id);
-		return View::make('phong_thuy_post', array('post' => $post));
+		return View::make('post', array(
+			'posts' => $posts,
+			'post' => $post,
+			'articles' => $articles
+		));
 	}
 }

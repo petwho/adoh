@@ -9,6 +9,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <link href="css/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="/css/styles.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript">
+      $(function () {
+        $('.readmore').click(function (e) {
+          e.preventDefault();
+          $('.summary').addClass('hidden');
+          $('.content').removeClass('hidden');
+          $(this).hide();
+        });
+      })
+    </script>
   </head>
   <body>

@@ -1,35 +1,27 @@
 <div class="col-sm-12 col-md-4 sidebar-left no-padding">
   <ul class="nav">
-      <li class="active">
+      <!-- <li>
         <h4>Lorem ipsum Fugiat cillum anim voluptate dolore.</h4>
         <div>
           You'll be alright. No one can hurt you now. Come morning light. You and I'll be safe and sound...
         </div>
-      </li>
-      <li>
-        <h4>Lorem ipsum Aute in occaecat est incididunt.</h4>
-        <div>
-          You'll be alright. No one can hurt you now. Come morning light. You and I'll be safe and sound...
-        </div>
-      </li>
-      <li>
-        <h4>Lorem ipsum Magna labore voluptate laborum.</h4>
-        <div>
-          You'll be alright. No one can hurt you now. Come morning light. You and I'll be safe and sound...
-        </div>
-      </li>
-      <li>
-        <h4>Lorem ipsum Deserunt exercitation proident laborum dolor.</h4>
-        <div>
-          You'll be alright. No one can hurt you now. Come morning light. You and I'll be safe and sound...
-        </div>
-      </li>
-      <li>
-        <h4>Lorem ipsum Id do deserunt ut sint deserunt.</h4>
-        <div>
-          You'll be alright. No one can hurt you now. Come morning light. You and I'll be safe and sound...
-        </div>
-      </li>
+      </li> -->
+      <?php $i = 1; ?>
+      @foreach ($posts as $post)
+        @if ($i/5 < 1)
+          <li data-post-id="{{$post->id}}">
+            <h4>{{$post->title}}</h4>
+            <div>{{str_limit($post->summary, 100, '...')}}</div>
+          </li>
+        @else
+          <li class="hidden" data-post-id="{{$post->id}}">
+            <h4>{{$post->title}}</h4>
+            <div>{{str_limit($post->summary, 100, '...')}}</div>
+          </li>
+        @endif
+        <?php $i++; ?>
+      @endforeach
+  </ul>
       <div class="row-gap-small"></div>
       <div class="row">
         <div class="col-xs-12 text-center">
@@ -40,14 +32,24 @@
 
       <div class="row-gap-medium"></div>
 
-      <div class="row facebook">
-        <div class="col-xs-1">
-          <i class="fa fa-2x fa-thumbs-o-up"></i>
-        </div>
-        <div class="col-xs-11">
-          <p>Facebook</p>
-          <p>ADOH graphic design</p>
+      <div class="row facebook text-center">
+        <div class="col-xs-12">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
         </div>
       </div>
-  </ul>
+      <div class="row-gap-small"></div>
+      <div class="row text-center">
+        <div class="col-xs-12">
+          <p>Adoh &copy; 2014</p>
+        </div>
+      </div>
 </div>
+<script type="text/javascript">
+  $(function () {
+    $('.sidebar-left ul li').click(function () {
+      location.href = '/posts/' + ($(this).data('post-id'));
+    });
+  })
+</script>
