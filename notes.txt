@@ -1,0 +1,7 @@
+- Admin:
+	- Add links: posts, articles
+- Responsive:
+	- Gallery: Switch sidebar, change background, zoom image when click
+	- Navigation click slide to new page
+- Contact:
+	- Slide top down

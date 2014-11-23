@@ -2,9 +2,9 @@
 @section('content')
   <div class="row">
     <div class="col-xs-12">
-      <h3>Create Post</h3>
+      <h3>Create Article</h3>
       {{ Form::open(array(
-            'url' => '/posts/',
+            'url' => '/articles/',
             'method' => 'post',
             'role' => 'form')) }}
 
@@ -38,6 +38,14 @@
                     'placeholder' => 'Sample title'))}}
             </div>
             <div class='form-group'>
+              {{ Form::label('subtitle', 'Subtitle:') }}
+              {{ Form::text('subtitle', '', array(
+                    'class' => 'form-control',
+                    'id' => 'subtitle',
+                    'required' => true,
+                    'placeholder' => 'Sample subtitle'))}}
+            </div>
+            <div class='form-group'>
               {{ Form::label('summary', 'Summary:') }}
               {{ Form::textarea('summary', '', array(
                     'class' => 'form-control',
@@ -45,6 +53,15 @@
                     'rows' => 5,
                     'required' => true,
                     'placeholder' => 'Sample summary'))}}
+            </div>
+            <div class='form-group'>
+              {{ Form::label('thumb', 'Thumb:') }}
+              <br>
+              {{ Form::text('thumb', '', array(
+                    'class' => 'form-control',
+                    'id' => 'thumb',
+                    'required' => true,
+                    'placeholder' => 'https://www.google.com/images/srpr/logo11w.png'))}}
             </div>
             <div class='form-group'>
               {{ Form::label('image', 'Image:') }}
@@ -77,7 +94,7 @@
           </div>
         </div>
         <button class='btn btn-primary' type="submit">Create</button>&nbsp;
-        <a class='btn btn-warning' href='/posts'>Back</a>
+        <a class='btn btn-warning' href='/articles'>Back</a>
       {{ Form::close() }}
     </div>
   </div>

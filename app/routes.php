@@ -15,6 +15,21 @@ Route::get('/', 'HomeController@home');
 Route::get('/graphic', 'HomeController@graphic');
 Route::get('/interior', 'HomeController@interior');
 Route::get('/pallet', 'HomeController@pallet');
+
+Route::get('/posts', 'PostsController@index');
+Route::get('/posts/new', 'PostsController@create');
+Route::get('/posts/{id}/edit', 'PostsController@edit');
+Route::put('/posts/{id}', 'PostsController@update');
+Route::post('/posts', 'PostsController@store');
+Route::delete('/posts/{id}', 'PostsController@destroy');
+
+Route::get('/articles', 'ArticlesController@index');
+Route::get('/articles/new', 'ArticlesController@create');
+Route::get('/articles/{id}/edit', 'ArticlesController@edit');
+Route::put('/articles/{id}', 'ArticlesController@update');
+Route::post('/articles', 'ArticlesController@store');
+Route::delete('/articles/{id}', 'ArticlesController@destroy');
+
 Route::get('/articles/{id}', 'HomeController@article');
 Route::get('/posts/{id}', 'HomeController@posts');
 

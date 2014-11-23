@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
-class PostsController extends \BaseController {
+class ArticlesController extends \BaseController {
 
   public function __construct()
   {
@@ -14,8 +14,8 @@ class PostsController extends \BaseController {
     foreach ($galleries as $gallery) {
       $gallery_list[$gallery->id] = $gallery->title;
     }
-    return View::make('admin.posts.index', array(
-        'posts' => Post::all(),
+    return View::make('admin.articles.index', array(
+        'articles' => Article::all(),
         'gallery_list' => $gallery_list));
   }
 
@@ -28,21 +28,21 @@ class PostsController extends \BaseController {
    */
   public function edit($id)
   {
-    $post = Post::where('id', $id)->first();
+    $article = Article::where('id', $id)->first();
     $options = array(null=> '--- Select ---');
     $galleries = Gallery::all();
     foreach ($galleries as $gallery) {
       $options[$gallery['id']] = $gallery['title'];
     }
-    if ($post) {
-      return View::make('admin.posts.edit', array('post' => $post, 'options' => $options));
+    if ($article) {
+      return View::make('admin.articles.edit', array('article' => $article, 'options' => $options));
     }
-    return Redirect::back()->with('message', 'No posts was found');
+    return Redirect::back()->with('message', 'No articles was found');
   }
 
   /**
    * Update resource in storage.
-   * PUT /posts/{id}
+   * PUT /articles/{id}
    * @Return Respon 
    */
 
@@ -53,29 +53,33 @@ class PostsController extends \BaseController {
     $rules = array(
       'gallery_id' => array('required'),
       'title' => array('required'),
+      'subtitle' => array('required'),
       'summary' => array('required'),
       'content' => array('required'),
+      'thumb' => array('required'),
       'image' => array('required'),
     );
     // Create a new validator instance.
     $validator = Validator::make($data, $rules);
 
     if ($validator->passes()) {
-      $post = Post::find($id);
-      $post->title = Input::get('title');
-      $post->gallery_id = Input::get('gallery_id');
-      $post->summary = Input::get('summary');
-      $post->content = Input::get('content');
-      $post->image = Input::get('image');
-      $post->save();
-      return Redirect::back()->with('message', 'Post updated successfully.');
+      $article = Article::find($id);
+      $article->title = Input::get('title');
+      $article->subtitle = Input::get('subtitle');
+      $article->gallery_id = Input::get('gallery_id');
+      $article->summary = Input::get('summary');
+      $article->content = Input::get('content');
+      $article->thumb = Input::get('thumb');
+      $article->image = Input::get('image');
+      $article->save();
+      return Redirect::back()->with('message', 'Article updated successfully.');
     }
     return Redirect::back()->withErrors($validator);
   }
 
   /**
    * Show the form for creating a new resource.
-   * GET /posts/create
+   * GET /articles/create
    * @Return Respon 
    */
 
@@ -86,12 +90,12 @@ class PostsController extends \BaseController {
     foreach ($galleries as $gallery) {
       $options[$gallery['id']] = $gallery['title'];
     }
-    return View::make('admin.posts.create', array('options' => $options));
+    return View::make('admin.articles.create', array('options' => $options));
   }
 
   /**
    * Store a newly created resource in storage.
-   * POST /posts
+   * POST /articles
    * @Return Respon 
    */
 
@@ -100,24 +104,28 @@ class PostsController extends \BaseController {
     $data = Input::all();
     // dd($data);
     $rules = array(
-      'title' => array('required'),
       'gallery_id' => array('required'),
+      'title' => array('required'),
+      'subtitle' => array('required'),
       'summary' => array('required'),
       'content' => array('required'),
+      'thumb' => array('required'),
       'image' => array('required'),
     );
     // Create a new validator instance.
     $validator = Validator::make($data, $rules);
 
     if ($validator->passes()) {
-      $post = new Post();
-      $post->title = Input::get('title');
-      $post->gallery_id = Input::get('gallery_id');
-      $post->summary = Input::get('summary');
-      $post->content = Input::get('content');
-      $post->image = Input::get('image');
-      $post->save();
-      return Redirect::back()->with('message', 'Post created successfully.');
+      $article = new Article();
+      $article->title = Input::get('title');
+      $article->subtitle = Input::get('subtitle');
+      $article->gallery_id = Input::get('gallery_id');
+      $article->summary = Input::get('summary');
+      $article->content = Input::get('content');
+      $article->image = Input::get('image');
+      $article->thumb = Input::get('thumb');
+      $article->save();
+      return Redirect::back()->with('message', 'Article created successfully.');
     }
     return Redirect::back()->withErrors($validator);
   }
@@ -131,7 +139,7 @@ class PostsController extends \BaseController {
    */
   public function destroy($id)
   {
-    Post::destroy($id);
+    Article::destroy($id);
     return Response::json(['message' => 'Delete okie']);
   }
 }
