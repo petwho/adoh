@@ -42,7 +42,7 @@ Route::get('/dashboard', array(
       'user' => $user,
       'users' => User::all(),
       'posts' => Post::all(),
-      'projects' => Project::all()
+      // 'projects' => Project::all()
     ));
   }
 ));

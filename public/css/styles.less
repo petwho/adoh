@@ -207,13 +207,16 @@ img.map {
         color: #fff;
     }
 }
+.row-gap-tiny {
+    margin-top: 10px;
+}
 .row-gap-small {
     min-height: 20px;
 }
 .row-gap-medium {
     min-height: 50px;
 }
-.gallery {
+.gallery, .gallery-post {
     // background: #f7f7f7;
     background-color: #ebebeb;
 }
@@ -228,12 +231,13 @@ img.map {
     ul {
         li {
             text-align: justify;
-            padding: 20px 10px 20px 30px;
+            padding: 10px 50px 15px 50px;
             &:hover {
                 background: rgba(0, 0, 0, .2);
                 cursor: pointer;
             }
         }
+        height: 533px;
     }
 }
 .posts {
@@ -287,4 +291,7 @@ img.map {
 }
 .hidden {
     display: none;
+}
+.gray {
+    color: #ccc;
 }

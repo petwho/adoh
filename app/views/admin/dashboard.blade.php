@@ -25,7 +25,7 @@
         <div class="row-gap-small"></div>
         <div class="row">
           <div class="col-xs-12">
-            <a href="/posts/create" class="btn btn-primary btn-lg">Thêm Bài Viết</a>
+            <a href="/posts/" class="btn btn-primary btn-lg">Thêm Bài Viết</a>
           </div>
         </div>
         <div class="row-gap-small"></div>
@@ -49,9 +49,6 @@
                   <div class="col-xs-4">
                     <i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;{{count($posts)}} bài viết
                   </div>
-                  <div class="col-xs-4">
-                    <i class="fa fa-th-large"></i>&nbsp;&nbsp;{{count($projects)}} dự án
-                  </div>
                 </div>
               </div>
             </div>
@@ -67,20 +64,6 @@
                 <div class="panel-heading">Bài viết mới nhất</div>
                 <div class="panel-body">
                   {{str_limit($posts[0]->summary, 100, '...')}}
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-6">
-              <div class="panel panel-info panel-white">
-                <div class="panel-heading">Dự án mới nhất</div>
-                <div class="panel-body">
-                  <div class="pull-left">
-                    <img class="img-thumbnail" src="{{$projects[0]->image}}" width=60 height=60 style="width: 60px; height: 60px">
-                  </div>
-                  <div class="project-des-right">
-                    <p>Tên dự án: <em>{{str_limit($projects[0]->name, 100, '...')}}</em></p>
-                    <p>Ngày tạo: <em>{{str_limit($projects[0]->created_at, 100, '...')}}</em></p>
-                  </div>
                 </div>
               </div>
             </div>

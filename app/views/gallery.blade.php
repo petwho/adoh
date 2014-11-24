@@ -20,8 +20,6 @@
 
   <div class="row gallery">
 
-    @include('share.left_sidebar', array('posts' => $posts))
-
     <div class="col-xs-12 col-md-8 image-wrapper right-sidebar">
       <div class="row">
         <div class="col-xs-8 no-padding hidden-overflow">
@@ -52,6 +50,9 @@
         </div>
       </div>
     </div>
+
+    @include('share.left_sidebar', array('posts' => $posts))
+    
   </div>
 
 </div>
