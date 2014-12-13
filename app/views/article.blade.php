@@ -27,7 +27,7 @@
 
       <div class="row-gap-medium"></div>
 
-      @include('share.carousel')
+      @include('share.carousel', array('article' => $article))
 
     </div>
   </body>

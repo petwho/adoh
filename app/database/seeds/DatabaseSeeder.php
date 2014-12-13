@@ -131,6 +131,9 @@ class ArticlesTableSeeder extends Seeder {
         'summary' => 'Lorem ipsum Officia ad exercitation ex eu est dolore in enim minim eu sed Ut cupidatat enim esse est ut Ut est nostrud qui sunt velit est dolor occaecat commodo consectetur incididunt.',
         'image' => "/assets/big-image-0".$i.".jpg",
         'thumb' => "/assets/".$i.".jpg",
+        'carousel_img1' => '/images/smaller-image-01.jpg',
+        'carousel_img2' => '/images/smaller-image-02.jpg',
+        'carousel_img3' => '/images/smaller-image-03.jpg',
       ]);
     }
 
@@ -144,6 +147,9 @@ class ArticlesTableSeeder extends Seeder {
         'summary' => 'Lorem ipsum Ut aliqua in laboris ad nostrud labore dolore in voluptate dolore consectetur voluptate mollit dolor nisi voluptate ut sed mollit officia Ut voluptate ut qui et Excepteur in magna aliquip esse sed ad qui sint laboris enim culpa minim.',
         'image' => "/assets/big-image-0".$i.".jpg",
         'thumb' => "/assets/".$i.".jpg",
+        'carousel_img1' => '/images/smaller-image-01.jpg',
+        'carousel_img2' => '/images/smaller-image-02.jpg',
+        'carousel_img3' => '/images/smaller-image-03.jpg',
       ]);
     }
 
@@ -157,6 +163,9 @@ class ArticlesTableSeeder extends Seeder {
         'summary' => 'Lorem ipsum Do Excepteur ex enim ut ullamco voluptate sed sint veniam proident do in eu voluptate fugiat elit tempor non labore nostrud.',
         'image' => "/assets/big-image-0".$i.".jpg",
         'thumb' => "/assets/".$i.".jpg",
+        'carousel_img1' => '/images/smaller-image-01.jpg',
+        'carousel_img2' => '/images/smaller-image-02.jpg',
+        'carousel_img3' => '/images/smaller-image-03.jpg',
       ]);
     }
   }

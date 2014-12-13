@@ -72,6 +72,30 @@
                     'required' => true,
                     'placeholder' => 'https://www.google.com/images/srpr/logo11w.png'))}}
             </div>
+            <div class='form-group'>
+              {{ Form::label('image', 'Carousel 1:') }}
+              {{ Form::text('carousel_img1', $article->carousel_img1, array(
+                    'class' => 'form-control',
+                    'id' => 'image',
+                    'required' => true,
+                    'placeholder' => 'https://www.google.com/images/srpr/logo11w.png'))}}
+            </div>
+            <div class='form-group'>
+              {{ Form::label('image', 'Carousel 2:') }}
+              {{ Form::text('carousel_img2', $article->carousel_img2, array(
+                    'class' => 'form-control',
+                    'id' => 'image',
+                    'required' => true,
+                    'placeholder' => 'https://www.google.com/images/srpr/logo11w.png'))}}
+            </div>
+            <div class='form-group'>
+              {{ Form::label('image', 'Carousel 3:') }}
+              {{ Form::text('carousel_img3', $article->carousel_img3, array(
+                    'class' => 'form-control',
+                    'id' => 'image',
+                    'required' => true,
+                    'placeholder' => 'https://www.google.com/images/srpr/logo11w.png'))}}
+            </div>
             <div class="form-group">
               {{ Form::label('gallery_id', 'Gallery:') }}
               {{ Form::select('gallery_id', $options, $article->gallery_id, array(
