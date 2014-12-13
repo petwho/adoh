@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder {
     $this->call('GalleriesTableSeeder');
     $this->call('PostsTableSeeder');
     $this->call('ArticlesTableSeeder');
+    $this->call('CarouselImagesTableSeeder');
     $this->command->info('All tables seeded!');
   }
 
@@ -72,6 +73,19 @@ class GalleriesTableSeeder extends Seeder {
   }
 }
 
+class CarouselImagesTableSeeder extends Seeder {
+  public function run()
+  {
+    DB::table('carousel_images')->delete();
+    for ($i = 0; $i < 3; $i++) {
+      CarouselImage::create([
+        'id' => $i + 1,
+        'url' => '/images/big-image.png',
+        'position' => $i + 1
+      ]);
+    }
+  }
+}
 
 class PostsTableSeeder extends Seeder {
 

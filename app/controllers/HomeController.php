@@ -19,10 +19,12 @@ class HomeController extends BaseController {
 	{
 		$posts = Post::all();
 		$articles = Article::all();
+		$carouselImages = CarouselImage::all();
 
 		return View::make('home', array(
 			'posts' => $posts,
-			'articles' => $articles
+			'articles' => $articles,
+			'carouselImages' => $carouselImages
 		));
 	}
 

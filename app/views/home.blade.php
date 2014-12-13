@@ -39,15 +39,13 @@
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-          <div class="item active">
-            <img src="images/big-image.png" alt="...">
-          </div>
-          <div class="item">
-            <img src="images/big-image.png" alt="...">
-          </div>
-          <div class="item">
-            <img src="images/big-image.png" alt="...">
-          </div>
+          <?php $i = 0; ?>
+          @foreach ($carouselImages as $image)
+            <div class="item {{{ ($i == 0) ? 'active' : '' }}}">
+              <?php $i++;?>
+              <img src="{{$image->url}}" alt="...">
+            </div>
+          @endforeach
         </div>
 
         <!-- Controls -->

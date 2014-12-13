@@ -15,6 +15,7 @@ Route::get('/', 'HomeController@home');
 Route::get('/graphic', 'HomeController@graphic');
 Route::get('/interior', 'HomeController@interior');
 Route::get('/pallet', 'HomeController@pallet');
+Route::resource('carousel_images', 'CarouselImagesController');
 
 Route::get('/posts', 'PostsController@index');
 Route::get('/posts/new', 'PostsController@create');
