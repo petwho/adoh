@@ -1,27 +1,27 @@
-<div class="col-sm-12 col-md-4 sidebar-left no-padding">
-  <ul class="nav">
-      <!-- <li>
-        <h4>Lorem ipsum Fugiat cillum anim voluptate dolore.</h4>
-        <div>
-          You'll be alright. No one can hurt you now. Come morning light. You and I'll be safe and sound...
-        </div>
-      </li> -->
-      <?php $i = 1; ?>
-      @foreach ($posts as $post)
-        @if ($i/6 < 1)
-          <li data-post-id="{{$post->id}}" class="page-{{floor($i/6)}}">
-            <h4>{{str_limit($post->title, 35, '...')}}</h4>
-            <div>{{str_limit($post->summary, 100, '...')}}</div>
-          </li>
-        @else
-          <li class="hidden page-{{floor($i/6)}}" data-post-id="{{$post->id}}">
-            <h4>{{str_limit($post->title, 35, '...')}}</h4>
-            <div>{{str_limit($post->summary, 100, '...')}}</div>
-          </li>
-        @endif
-        <?php $i++; ?>
-      @endforeach
-  </ul>
+<div class="col-xs-12 col-md-4 sidebar-left no-padding">
+      <ul class="nav">
+          <!-- <li>
+            <h4>Lorem ipsum Fugiat cillum anim voluptate dolore.</h4>
+            <div>
+              You'll be alright. No one can hurt you now. Come morning light. You and I'll be safe and sound...
+            </div>
+          </li> -->
+          <?php $i = 1; ?>
+          @foreach ($posts as $post)
+            @if ($i/6 < 1)
+              <li data-post-id="{{$post->id}}" class="page-{{floor($i/6)}}">
+                <h4>{{str_limit($post->title, 35, '...')}}</h4>
+                <div>{{str_limit($post->summary, 100, '...')}}</div>
+              </li>
+            @else
+              <li class="hidden page-{{floor($i/6)}}" data-post-id="{{$post->id}}">
+                <h4>{{str_limit($post->title, 35, '...')}}</h4>
+                <div>{{str_limit($post->summary, 100, '...')}}</div>
+              </li>
+            @endif
+            <?php $i++; ?>
+          @endforeach
+      </ul>
       <div class="row-gap-small"></div>
       <div class="row">
         <div class="col-xs-12 text-center">
