@@ -25,6 +25,9 @@ class CreateArticlesTable extends Migration {
 		    $table->string('carousel_img1');
 		    $table->string('carousel_img2');
 		    $table->string('carousel_img3');
+		    $table->string('carousel_img4');
+		    $table->string('carousel_img5');
+		    $table->string('carousel_img6');
 		    $table->softDeletes();
 		    $table->timestamps();
 		    $table->foreign('gallery_id')

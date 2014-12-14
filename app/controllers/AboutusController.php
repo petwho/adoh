@@ -1,53 +1,53 @@
 <?php
 
-class CarouselImagesController extends \BaseController {
+class AboutusController extends \BaseController {
 	/* Apply filter */
 	public function __construct()
 	{
 		$this->beforeFilter('auth');
 	}
+
 	/**
 	 * Display a listing of the resource.
-	 * GET /carouselimages
+	 * GET /aboutus
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-		$carouselImages = CarouselImage::all();
-		return View::make('admin.carousel', array('carouselImages' => $carouselImages));
+		return View::make('admin.aboutus', array('aboutus' => Aboutus::find(1)));
 	}
 
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /carouselimages/create
+	 * GET /aboutus/create
 	 *
 	 * @return Response
 	 */
 	public function create()
 	{
+		//
 	}
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /carouselimages
+	 * POST /aboutus
 	 *
 	 * @return Response
 	 */
 	public function store()
 	{
-		$urls = Input::get('carousel_image');
-		for ($i = 0; $i < count($urls); $i++) {
-			$carouselImage = CarouselImage::find($i + 1);
-			$carouselImage->url = $urls[$i];
-			$carouselImage->save();
-		}
+		$aboutus = Aboutus::find(1);
+		$aboutus->title = Input::get('title');
+		$aboutus->subtitle = Input::get('subtitle');
+		$aboutus->content = Input::get('content');
+		$aboutus->save();
 		return Redirect::back();
 	}
 
 	/**
 	 * Display the specified resource.
-	 * GET /carouselimages/{id}
+	 * GET /aboutus/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -59,19 +59,19 @@ class CarouselImagesController extends \BaseController {
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /carouselimages/{id}/edit
+	 * GET /aboutus/{id}/edit
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
 	public function edit($id)
 	{
-
+		//
 	}
 
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /carouselimages/{id}
+	 * PUT /aboutus/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -83,7 +83,7 @@ class CarouselImagesController extends \BaseController {
 
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /carouselimages/{id}
+	 * DELETE /aboutus/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response

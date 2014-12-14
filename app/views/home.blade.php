@@ -25,7 +25,7 @@
   </div>
 
   <!-- Inntro text -->
-  @include('share.intro')
+  @include('share.intro', array('aboutus' => $aboutus))
 
   <div class="row">
     <div class="col-xs-12 no-padding">

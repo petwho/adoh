@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder {
     $this->call('PostsTableSeeder');
     $this->call('ArticlesTableSeeder');
     $this->call('CarouselImagesTableSeeder');
+    $this->call('AboutusTableSeeder');
     $this->command->info('All tables seeded!');
   }
 
@@ -87,6 +88,19 @@ class CarouselImagesTableSeeder extends Seeder {
   }
 }
 
+class AboutusTableSeeder extends Seeder {
+  public function run()
+  {
+    DB::table('aboutus')->delete();
+    Aboutus::create([
+      'id' => 1,
+      'title' => 'Lorem ipsum',
+      'subtitle' => 'Lorem ipsum Esse sit veniam culpa nulla.',
+      'content' => 'Lorem ipsum Elit mollit Duis anim cupidatat nisi amet magna id voluptate enim ullamco sit voluptate anim pariatur sunt dolor dolore dolor sint dolore eiusmod aute ea amet consectetur proident dolor id occaecat ea velit cillum esse elit dolor in in ea aute dolore tempor sit aliqua enim consectetur culpa pariatur officia amet eiusmod consectetur nulla proident irure ea do consequat nulla do sint eu proident sed culpa dolore laborum culpa magna magna incididunt in ea voluptate reprehenderit in in est dolore elit in Duis ea occaecat incididunt nulla veniam consectetur fugiat cillum veniam elit nisi dolor dolor pariatur elit elit dolore pariatur cillum velit elit ullamco aliquip amet commodo laboris ad sed consectetur fugiat adipisicing enim elit sed sunt ea magna id aliquip aliqua tempor proident pariatur commodo mollit exercitation voluptate nulla occaecat dolor sunt cillum do sit officia exercitation quis Duis aute est nisi amet proident adipisicing sed Excepteur exercitation qui officia mollit nulla sit anim in exercitation nisi et minim tempor mollit dolore do sunt sit proident ut non officia Excepteur sed cillum voluptate voluptate elit irure tempor qui velit dolor sit fugiat ut ut culpa cillum labore irure cillum et est mollit elit Ut commodo quis velit sunt eiusmod minim reprehenderit consequat fugiat id cupidatat velit ut mollit dolor occaecat aute exercitation fugiat ex commodo consectetur culpa incididunt qui ea est commodo consectetur laborum esse dolore cillum laboris ut consectetur sint do pariatur sit aliquip sint cupidatat aliquip magna aute.',
+    ]);
+  }
+}
+
 class PostsTableSeeder extends Seeder {
 
   public function run()
@@ -148,6 +162,9 @@ class ArticlesTableSeeder extends Seeder {
         'carousel_img1' => '/images/smaller-image-01.jpg',
         'carousel_img2' => '/images/smaller-image-02.jpg',
         'carousel_img3' => '/images/smaller-image-03.jpg',
+        'carousel_img4' => '/images/smaller-image-03.jpg',
+        'carousel_img5' => '/images/smaller-image-03.jpg',
+        'carousel_img6' => '/images/smaller-image-03.jpg',
       ]);
     }
 
@@ -164,6 +181,9 @@ class ArticlesTableSeeder extends Seeder {
         'carousel_img1' => '/images/smaller-image-01.jpg',
         'carousel_img2' => '/images/smaller-image-02.jpg',
         'carousel_img3' => '/images/smaller-image-03.jpg',
+        'carousel_img4' => '/images/smaller-image-03.jpg',
+        'carousel_img5' => '/images/smaller-image-03.jpg',
+        'carousel_img6' => '/images/smaller-image-03.jpg',
       ]);
     }
 
@@ -180,6 +200,9 @@ class ArticlesTableSeeder extends Seeder {
         'carousel_img1' => '/images/smaller-image-01.jpg',
         'carousel_img2' => '/images/smaller-image-02.jpg',
         'carousel_img3' => '/images/smaller-image-03.jpg',
+        'carousel_img4' => '/images/smaller-image-03.jpg',
+        'carousel_img5' => '/images/smaller-image-03.jpg',
+        'carousel_img6' => '/images/smaller-image-03.jpg',
       ]);
     }
   }
