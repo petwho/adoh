@@ -74,6 +74,9 @@ class ArticlesController extends \BaseController {
       $article->carousel_img1 = Input::get('carousel_img1');
       $article->carousel_img2 = Input::get('carousel_img2');
       $article->carousel_img3 = Input::get('carousel_img3');
+      $article->carousel_img4 = Input::get('carousel_img4');
+      $article->carousel_img5 = Input::get('carousel_img5');
+      $article->carousel_img6 = Input::get('carousel_img6');
       $article->save();
       return Redirect::back()->with('message', 'Article updated successfully.');
     }
