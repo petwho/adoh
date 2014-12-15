@@ -52,6 +52,7 @@
               <li><a href="/posts"><i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;Posts</a></li>
               <li><a href="/articles"><i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;Articles</a></li>
               <li><a href="/carousel_images"><i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;Carousel Images</a></li>
+              <li><a href="/aboutus"><i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;About Us</a></li>
               <!-- <li><a href="/categories"><i class="fa fa-plug"></i>&nbsp;&nbsp;Categories</a></li> -->
               <!-- <li><a href="/uploads"><i class="fa fa-upload"></i>&nbsp;&nbsp;Uploads</a></li> -->
             </ul>
