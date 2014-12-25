@@ -3,8 +3,8 @@
       @include('share.navbar_static')
       
       <div class="row">
-        <div class="col-xs-12 no-padding">
-          <img class="img-responsive" src="http://vinz.artlessthemes.com/horizontal-menu/wp-content/uploads/2014/09/big-image-01.jpg" alt="">
+        <div class="col-xs-12 no-padding text-center">
+          <img class="img-responsive" src="{{$article->image}}" alt="" width="100%">
         </div>
       </div>
 
