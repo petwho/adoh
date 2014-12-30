@@ -13,7 +13,7 @@
         <div class="col-xs-12 no-padding">
           <h3>{{$post->title}}</h3>
           <p class="author">admin</p>
-          <p>{{$post->content}}</p>
+          <div>{{$post->content}}</div>
         </div>
       </div>
     </div>

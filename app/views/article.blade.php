@@ -14,10 +14,10 @@
       <div class="row">
         <div class="col-xs-2 col-xs-offset-1">
           <div class="h3">{{$article->title}}</div>
-          <p>{{$article->subtitle}}</p>
+          <div>{{$article->subtitle}}</div>
         </div>
         <div class="col-xs-8 col-xs-offset-1">
-          <p class="summary">{{$article->summary}}...</p>
+          <div class="summary">{{$article->summary}}</div>
           <div class="content hidden">{{$article->content}}</div>
           <div class="row-gap-small"></div>
           <a href="#" class="readmore">read more</a>
