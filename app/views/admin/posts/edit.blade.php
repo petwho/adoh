@@ -30,7 +30,7 @@
 
         <!-- Left side -->
         <div class="row">
-          <div class="col-xs-6">
+          <div class="col-xs-12">
             <div class='form-group'>
               {{ Form::label('title', 'Title:') }}
               {{ Form::text('title', $post->title, array(
@@ -64,9 +64,7 @@
               'required' => true,
               'placeholder' => ''))}}
             </div>
-          </div>
-          <!-- Content -->
-          <div class="col-xs-6">
+            <!-- Content -->
             <div class='form-group'>
               {{ Form::label('content', 'Content:') }}
               {{ Form::textarea('content', $post->content, array(
